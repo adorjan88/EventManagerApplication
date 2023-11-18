@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-
+import HomeComponent from "./HomeComponent"
+import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
   
@@ -12,6 +10,10 @@ export default function App() {
   //gombnyomás teszt
   const handleButtonPress = () => {
     Alert.alert('Sign In', 'Debugged');
+  };
+
+  const handleButtonPressSkip = () => {
+    navigation.navigate(HomeComponent)
   };
 
   return (
@@ -25,7 +27,7 @@ export default function App() {
       />
       <TextInput
         style={styles.textInput}
-        placeholder="Jelszó"
+        placeholder="Password"
         onChangeText={(text) => setInputText(text)}
         value={inputText}
       />
@@ -35,7 +37,15 @@ export default function App() {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button title="SKIP"/>
+        <Button 
+          title="SKIP"
+        >
+
+        </Button>
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <Button title="Sign up"/>
       </View>
 
     </View>
@@ -60,4 +70,5 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 20,
   },
+  
 });
