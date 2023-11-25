@@ -11,13 +11,13 @@ const HomeScreen = ({navigation }) => {
           <Text>Event Manager Application</Text>
           <TextInput
             style={styles.textInput}
-            placeholder="Email"
+            placeholder="Emaasdasaasarsil"
             onChangeText={(text) => setInputText(text)}
             value={inputText}
           />
           <TextInput
             style={styles.textInput}
-            placeholder="Password"
+            placeholder="Pasdsaadsdsasword"
             onChangeText={(text) => setInputText(text)}
             value={inputText}
           />
